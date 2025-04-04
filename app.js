@@ -137,7 +137,7 @@ function startNewChat() {
     document.getElementById('chatBox').innerHTML = '';
     
     addMessage(
-        `Merhaba ${BOT_IDENTITY.currentUser}! Ben ${BOT_IDENTITY.name}, size nasıl yardımcı olabilirim?`, 
+        `Merhaba! Ben ${BOT_IDENTITY.name}, size nasıl yardımcı olabilirim?`, 
         'ai'
     );
     
