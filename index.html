@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>YILDIZ AI - Yapay Zeka Sohbet</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#64b5f6">
+    <link rel="apple-touch-icon" href="logo.png">
+    <meta name="apple-mobile-web-app-title" content="YILDIZ AI">
+</head>
+<body>
+    <!-- Yıldız Efekti -->
+    <div class="stars-container">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </div>
+
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen" class="welcome-screen">
+        <div class="welcome-content">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo" id="customLogo" class="custom-logo">
+                <div class="logo-glow"></div>
+            </div>
+            <h1 class="welcome-title">YILDIZ AI</h1>
+            <p class="developer-credit">Hüseyin YILDIZ tarafından geliştirildi</p>
+            <div class="loading-bars">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="appContainer" class="app-container" style="display: none;">
+        <div class="chat-container">
+            <!-- Sidebar / Yan Menü -->
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <div class="sidebar-title">
+                        <h2>Sohbetlerim</h2>
+                        <button class="new-chat-btn" onclick="startNewChat()">
+                            <i class="fas fa-plus"></i> Yeni Sohbet
+                        </button>
+                    </div>
+                </div>
+                <div class="chat-list" id="chatList">
+                    <!-- Sohbet listesi buraya dinamik olarak eklenecek -->
+                </div>
+            </div>
+            
+            <!-- Main Chat Area -->
+            <div class="main-chat-area">
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <div class="header-left">
+                        <button class="sidebar-toggle" onclick="toggleSidebar()">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <div class="header-logo-container">
+                            <img src="logo.png" alt="Logo" class="header-logo-img">
+                        </div>
+                        <div class="header-titles">
+                            <h1 class="header-title">YILDIZ AI</h1>
+                            <p class="header-subtitle">Yapay Zeka Asistanı</p>
+                        </div>
+                    </div>
+                    <div class="header-right">
+                        <div class="status-badge">
+                            <span class="status-dot"></span>
+                            <span>Çevrimiçi</span>
+                        </div>
+                        <span class="version-badge">v1.0</span>
+                    </div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div id="chatBox" class="chat-box"></div>
+
+                <!-- Input Area -->
+                <div class="input-container">
+                    <textarea id="userInput" placeholder="Mesajınızı yazın..." rows="1"></textarea>
+                    <button onclick="sendMessage()" class="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Name Modal -->
+    <div id="chatNameModal" class="modal">
+        <div class="modal-content">
+            <h3>Sohbet Adını Düzenle</h3>
+            <input type="text" id="chatNameInput" placeholder="Sohbet adını girin">
+            <div class="modal-buttons">
+                <button onclick="saveChatName()">Kaydet</button>
+                <button onclick="closeModal()">İptal</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
